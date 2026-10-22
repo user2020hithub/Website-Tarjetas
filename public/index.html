@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tarjetas ES · Learn Spanish</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇪🇸</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+
+    <!-- Pantalla 1: inicio -->
+    <section id="screen-start" class="screen active">
+      <div class="logo" aria-hidden="true">🇪🇸</div>
+      <h1>Tarjetas ES</h1>
+      <p class="subtitle">Learn Spanish words with a quick 10-question quiz.</p>
+      <p class="best">🏆 Best score: <strong id="best-score">–</strong></p>
+      <button id="btn-start" class="btn btn-primary">Start quiz</button>
+      <p id="start-error" class="error" hidden></p>
+    </section>
+
+    <!-- Pantalla 2: quiz -->
+    <section id="screen-quiz" class="screen">
+      <div class="progress" aria-hidden="true">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      <p class="counter">Question <span id="q-number">1</span> of <span id="q-total">10</span></p>
+
+      <div class="card">
+        <span id="q-category" class="tag"></span>
+        <p class="prompt">What does this mean in English?</p>
+        <h2 id="q-word" class="word"></h2>
+      </div>
+
+      <div id="options" class="options"></div>
+
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+      <button id="btn-next" class="btn btn-primary" hidden>Next</button>
+    </section>
+
+    <!-- Pantalla 3: resultados -->
+    <section id="screen-result" class="screen">
+      <div class="logo" id="result-emoji" aria-hidden="true">🎉</div>
+      <h1>Quiz complete!</h1>
+      <p class="big-score"><span id="final-score">0</span> / <span id="final-total">10</span></p>
+      <p id="result-message" class="subtitle"></p>
+      <p class="best">🏆 Best score: <strong id="result-best">–</strong></p>
+      <button id="btn-restart" class="btn btn-primary">Try again</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
