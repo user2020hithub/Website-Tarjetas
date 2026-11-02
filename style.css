@@ -1,0 +1,210 @@
+/* Colores y medidas reutilizables */
+:root {
+  --bg: #fff4e0;
+  --card: #ffffff;
+  --text: #2d2a4a;
+  --muted: #6e6a8c;
+  --primary: #ff6b6b;
+  --primary-dark: #e65555;
+  --accent: #4d96ff;
+  --good: #3ec27a;
+  --good-bg: #e3f8ec;
+  --bad: #f25c5c;
+  --bad-bg: #fde6e6;
+  --radius: 20px;
+  --shadow: 0 8px 24px rgba(45, 42, 74, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-family: ui-rounded, "Nunito", "Segoe UI", system-ui, sans-serif;
+  color: var(--text);
+  background: linear-gradient(160deg, #fff4e0 0%, #ffe3ec 50%, #e0efff 100%);
+}
+
+.app {
+  width: 100%;
+  max-width: 480px;
+  background: var(--card);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: 28px 22px;
+}
+
+/* Solo se muestra la pantalla activa */
+.screen {
+  display: none;
+  text-align: center;
+}
+.screen.active {
+  display: block;
+}
+
+.logo {
+  font-size: 64px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.best {
+  margin: 0 0 22px;
+  font-size: 1.05rem;
+}
+
+.big-score {
+  margin: 0 0 8px;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+/* Botones */
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 32px;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 6px 0 var(--primary-dark);
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+/* Barra de progreso */
+.progress {
+  height: 10px;
+  background: #eceaf5;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+.counter {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Tarjeta con la palabra */
+.card {
+  background: linear-gradient(135deg, #e0efff, #fdeaff);
+  border-radius: var(--radius);
+  padding: 22px 16px 28px;
+  margin-bottom: 18px;
+}
+.tag {
+  display: inline-block;
+  background: #fff;
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.prompt {
+  margin: 12px 0 6px;
+  color: var(--muted);
+}
+.word {
+  margin: 0;
+  font-size: 2.4rem;
+  word-break: break-word;
+}
+
+/* Opciones de respuesta */
+.options {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.option {
+  border: 3px solid #e4e1f2;
+  background: #fff;
+  color: var(--text);
+  border-radius: 16px;
+  padding: 14px;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.option:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+.option:disabled {
+  cursor: default;
+}
+.option.correct {
+  border-color: var(--good);
+  background: var(--good-bg);
+}
+.option.wrong {
+  border-color: var(--bad);
+  background: var(--bad-bg);
+}
+
+.feedback {
+  min-height: 1.6em;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+.feedback.good {
+  color: var(--good);
+}
+.feedback.bad {
+  color: var(--bad);
+}
+
+.error {
+  margin-top: 14px;
+  color: var(--bad);
+  font-weight: 600;
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 380px) {
+  .word {
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+}
