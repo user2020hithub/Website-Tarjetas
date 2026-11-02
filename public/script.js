@@ -187,10 +187,10 @@ nextBtn.addEventListener("click", () => {
 async function startQuiz() {
   startErrorEl.hidden = true;
 
-  // Pide las palabras al servidor la primera vez.
+  // Carga las palabras desde words.json (archivo estático) la primera vez.
   if (allWords.length === 0) {
     try {
-      const response = await fetch("/api/words");
+      const response = await fetch("words.json");
       if (!response.ok) throw new Error("Bad response");
       allWords = await response.json();
     } catch (e) {
